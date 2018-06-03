@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="section">
+    <input placeholder="标题" bindinput="change"  value="{{content}}" auto-focus />
+  </view>
+  <view class="tags" wx:if="{{ tags.length }}">
+    <view class="tag" wx:for="{{ tags }}" wx:key="index">
+      <text class="txt">{{ item }}</text>
+      <icon class="remove" type="clear" size="16" data-index="{{ index }}" bindtap="removeTag"/>
+    </view>
+  </view>
+
+
+  <view class="section">
+    <textarea  bindinput="change2" value="{{content2}}" auto-height="true" />
+
+  </view>
+  <!-- 
+  <button type="primary" bindtap="create"> 创 建 </button> -->
+ 
+</view>
+ <view class="section2">
+    <image class='image-class2'  src="/Images/添加.jpg" > </image>
+    <text style='font-size: 50rpx;' >添加图片</text>
+    <!--<input placeholder="添加图片" value="{{ tag }}" bindconfirm="addTag" wx:if="{{ tags.length < 3 }}"/>-->
+  </view>
+<text class='fabu' bindtap="sure">发布</text>
+<text class='fanhui' bindtap="cancel">返回</text>

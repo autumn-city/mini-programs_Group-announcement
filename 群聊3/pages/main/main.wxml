@@ -1,0 +1,23 @@
+<view class='top-class'>
+   <text style='font-size:60rpx'>群名</text>
+</view>
+
+
+<view class='page'>
+  <!-- 每一条文字 -->
+  <scroll-view scroll-y='true' class='lists'>
+    <block wx:for="{{lists}}" wx:key="*this.id">
+      <view class="list-i" bindtap="edit" data-id="{{item.id}}">
+        <view class="content">{{item.content}}</view>
+        <view class='time'>创建时间：{{item.time}}</view>
+      </view>
+       <icon data-index='{{index}}' bindtap='onItemRemove' type="cancel" size="20"/>
+    </block>
+  </scroll-view>
+  <!-- 添加一条文字的按钮 -->
+  <view class='add' bindtap='add'>
+    <image class='image-class'  src="/Images/添加.jpg" > </image>
+  </view>
+</view>
+
+
